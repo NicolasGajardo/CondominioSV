@@ -2,7 +2,7 @@
 CondominioSV-ejb/build/
 CondominioSV-ejb/dist/
 CondominioSV-ejb/nbproject/
-CondominioSV-ejb/build.
+CondominioSV-ejb/build.xml
 
 CondominioSV-war/build/
 CondominioSV-war/dist/
