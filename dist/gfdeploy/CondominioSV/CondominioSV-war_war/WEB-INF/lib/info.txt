@@ -1,0 +1,9 @@
+Como Ette Keg, un posible residente, quiero arrendar un departamento 
+con 2 habitaciones como mínimo y a un precio moderado para poder vivir cómodamente con mi familia. 
+
+paleta de colores
+	background: http://paletton.com/#uid=11G0u0k7tuW1jR-3WFfbNqmgMlX
+	font: http://paletton.com/#uid=71q1s0kpRaG9h00hm5TBZg-XSml
+Notas:
+//Agregar otros datos a los departamentos.
+

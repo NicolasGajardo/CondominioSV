@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Spirax');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+body {
+	background-color: rgb(255, 254, 245);
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h1 a {
+	color: black;
+	font-size: 48px;
+	text-decoration: none;
+}
+
+a:not(.title):LINK{
+	color: rgb(132, 7, 0);	
+	text-decoration: none;
+}
+
+.link:HOVER{
+	font-weight: 900;
+	color: rgb(132, 7, 0);
+	font-size: 1.4em;
+}
+
+
+.title {
+	text-align: center;
+	font-family: 'Spirax', cursive;
+}
+
+.subtitle {
+	
+}
+
+.main {
+	margin: auto;
+	overflow: auto !important;
+}
+
+#bot {
+	background-color: rgb(210, 204, 133);
+	margin: 5px 0px 0px 0px;
+	padding: 5px 10px 5px 10px; 
+}
+
+#googleMap {
+	width: 100%;
+	height: 200px; margin : 0 auto;
+	border: 0;
+	margin: 0 auto;
+}
+
+.depto_container {
+	margin: auto;
+}
+
+.depto_container_left {
+	float: left;
+}
+
+.depto_container_right {
+	float: right;
+}
+
+img {
+	width: 500px;
+	height: auto;
+}
+
+.link {
+	font-size: 1.2em;
+}
+
+form div {
+	display: block;
+}
+
+form div p{
+	display: inline-block;
+}
+
+p[class*="obligatorio"] {
+	color: rgb(178, 9, 0) !important;
+	font-style: italic !important;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
