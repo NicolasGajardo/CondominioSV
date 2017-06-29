@@ -13,7 +13,7 @@
     </head>
     <body>
         <h1>Ingreso de asignatura</h1>
-        <form name="frm_residente" action="/CondominioSendaVista-war/BuscarResidenteServlet" method="POST">
+        <form name="frm_residente" action="/CondominioSV-war/BuscarResidenteServlet" method="POST">
             RUT: <input type="text" name="txt_rut">
             Nombre : <input type="text" name="txt_nombre">
             Depto : <input type="text" name="txt_depto" >
