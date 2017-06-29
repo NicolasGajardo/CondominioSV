@@ -21,6 +21,13 @@
         <servlet-name>EditarResidenteServlet</servlet-name>
         <servlet-class>com.session.EditarResidenteServlet</servlet-class>
     </servlet>
+        <servlet-name>AdminDepartamentoServlet</servlet-name>
+        <servlet-class>com.session.AdminDepartamentoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AdminDepartamentoOperacionesBDServlet</servlet-name>
+        <servlet-class>com.bd.AdminDepartamentoOperacionesBDServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CondominioSendaVistaServlet</servlet-name>
         <url-pattern>/CondominioSendaVistaServlet</url-pattern>
@@ -40,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>EditarResidenteServlet</servlet-name>
         <url-pattern>/EditarResidenteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDepartamentoServlet</servlet-name>
+        <url-pattern>/Admin/Departamento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminDepartamentoOperacionesBDServlet</servlet-name>
+        <url-pattern>/Admin/Departamento/OperacionesBD</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
