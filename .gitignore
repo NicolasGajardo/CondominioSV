@@ -1,6 +1,17 @@
 
+CondominioSV-ejb/build/
+CondominioSV-ejb/dist/
+CondominioSV-ejb/nbproject/
+CondominioSV-ejb/build.xml
+
+CondominioSV-war/build/
+CondominioSV-war/dist/
+CondominioSV-war/nbproject/
+CondominioSV-war/build.xml
+
 build/
 dist/
 nbproject/
 src/
 build.xml
+
