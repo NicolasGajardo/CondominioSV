@@ -38,7 +38,7 @@ public class ResidenteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             RequestDispatcher dispatcher;
-            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/jsp/buscar-residente.jsp");
+            dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/buscar-residente.jsp");
         
             dispatcher.forward(request, response);
         }
