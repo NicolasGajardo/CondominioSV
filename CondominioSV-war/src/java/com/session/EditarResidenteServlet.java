@@ -7,7 +7,6 @@ package com.session;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +19,7 @@ import persistencia.ResidenteFacadeLocal;
  *
  * @author ottoekog
  */
-public class BuscarResidenteServlet extends HttpServlet {
+public class EditarResidenteServlet extends HttpServlet {
 
     @EJB
     private ResidenteFacadeLocal residenteFacade;
@@ -37,40 +36,29 @@ public class BuscarResidenteServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+        Integer id = Integer.parseInt(request.getParameter("txt_id"));
+        String rut = request.getParameter("txt_rut");
+        String nombre = request.getParameter("txt_nombre");
+        String depto = request.getParameter("txt_depto");
+        Residente r = new Residente();
+        r.setId(id);
+        r.setRut(rut);
+        r.setNombre(nombre);
+        r.setDepto(depto);
+        
+        residenteFacade.edit(r);
+        
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            //            if(request.getParameter("txt_nombre")!=null){
-//                residenteFacade.
-//            }
-            List<Residente> listaResidentes = residenteFacade.findAll();
-
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet BuscarResidenteServlet</title>");            
+            out.println("<title>Servlet EditarResidenteServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet BuscarResidenteServlet at " + request.getContextPath() + "</h1>");
-            out.println("<table>");
-                out.println("<tr>");
-                    out.println("<td>ID</td>");
-                    out.println("<td>RUT</td>");
-                    out.println("<td>NOMBRE</td>");
-                    out.println("<td>DEPTO</td>");
-                    out.println("<td>MODIFICAR</td>");
-                    out.println("<td>ELIMINAR</td>");
-                out.println("</tr>");
-            for(Residente r : listaResidentes){
-                out.println("<tr>");
-                    out.println("<td>"+r.getId()+ "</td>");
-                    out.println("<td>"+r.getRut()+ "</td>");
-                    out.println("<td>"+r.getNombre()+ "</td>");
-                    out.println("<td>"+r.getDepto()+ "</td>");
-                    out.println("<td><a href='editar-residente.jsp?p_id="+r.getId()+"&p_rut="+r.getRut()+"&p_nombre="+r.getNombre()+"&p_depto="+r.getDepto()+"'>Editar</a></td>");
-                    out.println("<td><a href='eliminar-residente.jsp?'>Eliminar</a></td>");
-                out.println("</tr>");
-            }
-            out.println("</table>");
+            out.println("<h1>El residente "+ nombre + " ha sido actualizado correctamente</h1>");
+            out.println("<a href='BuscarResidenteServlet'>Ir a lista de residentes</a>");
             out.println("</body>");
             out.println("</html>");
         }
