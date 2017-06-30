@@ -22,3 +22,6 @@ build.xml
 *.class
 
 *.ear
+*.jar
+*.war
+*.ear
