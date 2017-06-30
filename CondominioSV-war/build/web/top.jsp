@@ -24,11 +24,5 @@
 		<a href="/CondominioSV-war/Departamentos" class="link">Departamentos</a>
 		<a href="/CondominioSV-war/Contactar" class="link">Contáctenos!</a>
                 <a href="/CondominioSV-war/Login" class="link">Acceso</a>
-	</div>
-        <!-- TODO: Se debe agragar cuando sea administrador -->
-        <div>Admin
-                <a href="/CondominioSV-war/Residentes" class="link">(a)Residentes</a>
-                <a href="/CondominioSV-war/Admin/Departamento" class="link">(a)Departamentos</a>
-        </div>
-        
+	</div>        
 </div>

@@ -12,7 +12,7 @@
 	<div class="main">
 		<h2>Login</h2>
 		<p class="obligatorio">* Obligatorio</p>
-		<form action="/CondominioSendaVista-war/Login" method="POST" >
+		<form action="/CondominioSV-war/Login" method="POST" >
 			<div>
 				<p>Usuario:</p>
 				<input id="inputusuario" name="input_usuario" onclick="estiloNormal('inputusuario')" onchange="validaCampos('inputusuario')" alt="Su Usuario Aquí" required>*

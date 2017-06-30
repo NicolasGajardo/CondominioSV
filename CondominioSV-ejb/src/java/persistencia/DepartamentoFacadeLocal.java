@@ -10,7 +10,7 @@ import javax.ejb.Local;
 
 /**
  *
- * @author Hamzo
+ * @author ottoekog
  */
 @Local
 public interface DepartamentoFacadeLocal {

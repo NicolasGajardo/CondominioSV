@@ -38,39 +38,58 @@ public class BuscarResidenteServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            //            if(request.getParameter("txt_nombre")!=null){
-//                residenteFacade.
-//            }
-            List<Residente> listaResidentes = residenteFacade.findAll();
-
+            List<Residente> listaResidentes;
+            if(request.getParameter("txt_id")!=null && !request.getParameter("txt_id").trim().equals("")){
+                System.out.println("ott" + request.getParameter("txt_id"));
+                listaResidentes = residenteFacade.buscarResidentePorId(Integer.parseInt(request.getParameter("txt_id")));
+            } else if (request.getParameter("txt_rut")!=null && !request.getParameter("txt_rut").trim().equals("")){
+                listaResidentes = residenteFacade.buscarResidentePorRut(request.getParameter("txt_rut"));
+            } else if (request.getParameter("txt_nombre")!=null && !request.getParameter("txt_nombre").trim().equals("")){
+                listaResidentes = residenteFacade.buscarResidentePorNombre(request.getParameter("txt_nombre"));
+            } else if (request.getParameter("txt_depto")!=null && !request.getParameter("txt_depto").trim().equals("")){
+                listaResidentes = residenteFacade.buscarResidentePorDepto(request.getParameter("txt_depto"));
+            } else {
+                listaResidentes = residenteFacade.findAll();
+            }
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet BuscarResidenteServlet</title>");            
+            out.println("<title>Residentes</title>"
+                    + "<link href=\"semantic/semantic.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n" +
+"                       <script src=\"semantic/jquery-3.2.1.min.js\" type=\"text/javascript\"></script>\n" +
+"                       <script src=\"semantic/semantic.min.js\" type=\"text/javascript\"></script>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet BuscarResidenteServlet at " + request.getContextPath() + "</h1>");
-            out.println("<table>");
+            out.println("<h1>LISTADO DE RESIDENTES</h1>");
+            out.println("<div class=\"ui segment\">");
+            out.println("<table class=\"ui celled table\">");
+            out.println("<thead>");
                 out.println("<tr>");
-                    out.println("<td>ID</td>");
-                    out.println("<td>RUT</td>");
-                    out.println("<td>NOMBRE</td>");
-                    out.println("<td>DEPTO</td>");
-                    out.println("<td>MODIFICAR</td>");
-                    out.println("<td>ELIMINAR</td>");
+                    out.println("<th class=\"single line\">ID</th>");
+                    out.println("<th>RUT</th>");
+                    out.println("<th>NOMBRE</th>");
+                    out.println("<th>DEPTO</th>");
+                    out.println("<th>MODIFICAR</th>");
+                    out.println("<th>ELIMINAR</th>");
                 out.println("</tr>");
-            for(Residente r : listaResidentes){
-                out.println("<tr>");
-                    out.println("<td>"+r.getId()+ "</td>");
-                    out.println("<td>"+r.getRut()+ "</td>");
-                    out.println("<td>"+r.getNombre()+ "</td>");
-                    out.println("<td>"+r.getDepto()+ "</td>");
-                    out.println("<td><a href='editar-residente.jsp?p_rut="+r.getRut()+"'>Editar</a></td>");
-                    out.println("<td><a href='eliminar-residente.jsp?'>Eliminar</a></td>");
-                out.println("</tr>");
+            out.println("</thead>");
+            out.println("<tbody>");
+            if(listaResidentes.size()>0){
+                for(Residente r : listaResidentes){
+                    out.println("<tr>");
+                        out.println("<td>"+r.getId()+ "</td>");
+                        out.println("<td>"+r.getRut()+ "</td>");
+                        out.println("<td>"+r.getNombre()+ "</td>");
+                        out.println("<td>"+r.getDepto()+ "</td>");
+                        out.println("<td><a href='editar-residente.jsp?p_id="+r.getId()+"&p_rut="+r.getRut()+"&p_nombre="+r.getNombre()+"&p_depto="+r.getDepto()+"'>Editar</a></td>");
+                        out.println("<td><a href='eliminar-residente.jsp?p_id="+r.getId()+"&p_nombre="+r.getNombre()+"'>Eliminar</a></td>");
+                    out.println("</tr>");
+                }
+            } else {
+                out.println("<tr><td style=\"text-align:center;\" colspan='6'>NO SE HAN ENCONTRADO RESULTADOS</td></tr>");
             }
-            out.println("</table>");
+            out.println("</tbody></table></div>");
+            out.println("<br><a href='Residentes'>VOLVER A BUSQUEDA</a>");
             out.println("</body>");
             out.println("</html>");
         }

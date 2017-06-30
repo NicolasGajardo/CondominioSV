@@ -29,4 +29,11 @@ public interface ResidenteFacadeLocal {
 
     int count();
     
+    List<Residente> buscarResidentePorId(int id);
+    
+    List<Residente> buscarResidentePorRut(String rut);
+        
+    List<Residente> buscarResidentePorNombre(String nombre);
+
+    public List<Residente> buscarResidentePorDepto(String parameter);    
 }

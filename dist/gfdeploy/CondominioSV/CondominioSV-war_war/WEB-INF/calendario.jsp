@@ -14,6 +14,13 @@
 </head>
 
 	<jsp:include page="../top.jsp"></jsp:include>
+        
+        <!-- TODO: Se debe agragar cuando sea administrador -->
+        <div>Admin
+                <a href="/CondominioSV-war/Residentes" class="link">(a)Residentes</a>
+                <a href="/CondominioSV-war/DepartamentoServlet" class="link">(a)Departamentos</a>
+        </div>
+        
 	PROXIMAS CITAS
         <div>
             
